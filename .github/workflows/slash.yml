@@ -1,17 +1,21 @@
-name: slash-command-dispatch
-
+name: Slash Command Dispatch
 on:
   issue_comment:
     types: [created]
 
 jobs:
-  slash-command-dispatch:
+  check_comments:
     runs-on: ubuntu-latest
     steps:
       - name: Slash Command Dispatch
-        uses: peter-evans/slash-command-dispatch@v1
+        uses: peter-evans/slash-command-dispatch@v2
         with:
           token: ${{ secrets.ACTIONS_BOT_TOKEN }}
+          reaction-token: ${{ secrets.ACTIONS_BOT_TOKEN }}
+          repository: Lyken17/lint-bot
+          # issue-type: pull-request
+          # permission: triage
           commands: |
-            hello-world
             help
+            hello-world
+
