@@ -12,4 +12,7 @@ jobs:
         uses: peter-evans/slash-command-dispatch@v1
         with:
           token: ${{ secrets.ACTIONS_BOT_TOKEN }}
-          commands: flake8-lint, black-check, hello-world-command
+          commands: |
+            flake8-lint
+            black-check
+            hello-world-command
