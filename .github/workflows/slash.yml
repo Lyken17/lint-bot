@@ -13,6 +13,5 @@ jobs:
         with:
           token: ${{ secrets.ACTIONS_BOT_TOKEN }}
           commands: |
-            flake8-lint
-            black-check
-            hello-world-command
+            hello-world
+            help
